@@ -9,7 +9,7 @@ from src.gui.configtool.deviceConfigurationTool import DeviceConfigurationTool
 from src.gui.configtool.generatedCodeDisplay import GeneratedCodeDisplay
 from src.gui.configtool.treeViewConfigTool import TreeViewConfigTool
 from src.simpleFOCConnector import SimpleFOCDevice
-
+from src.simpleFOCConnectorROS2 import SimpleFOCDeviceROS2
 
 class WorkAreaTabbedWidget(QtWidgets.QTabWidget):
 
@@ -19,6 +19,7 @@ class WorkAreaTabbedWidget(QtWidgets.QTabWidget):
         self.setMovable(True)
         self.setObjectName('devicesTabWidget')
 
+        SimpleFOCDeviceROS2.getInstance()
         self.device = SimpleFOCDevice.getInstance()
 
         self.cmdLineTool = None
